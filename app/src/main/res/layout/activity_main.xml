@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnAlunos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alunos"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <Button
+        android:id="@+id/btnMaterias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Matérias"
+        android:layout_below="@+id/btnAlunos"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnProfessores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Professores"
+        android:layout_below="@+id/btnMaterias"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnTurmas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Turmas"
+        android:layout_below="@+id/btnProfessores"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,60 @@
+<!-- activity_alunos.xml -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="app.java.com.example.appescola.ui.theme.ViewModel.AlunosViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".AlunosActivity">
+
+        <!-- Campos de cadastro de aluno -->
+        <EditText
+            android:id="@+id/editTextNomeAluno"
+            android:layout_width="383dp"
+            android:layout_height="73dp"
+            android:hint="Nome do Aluno"
+            android:text="@={viewModel.nomeAluno}" />
+
+        <EditText
+            android:id="@+id/editTextMatriculaAluno"
+            android:layout_width="384dp"
+            android:layout_height="88dp"
+            android:hint="Matrícula do Aluno"
+            android:text="@={viewModel.matriculaAluno}" />
+
+        <!-- Spinner para selecionar matéria vinculada -->
+        <Spinner
+            android:id="@+id/spinnerMaterias"
+            android:layout_width="388dp"
+            android:layout_height="77dp"
+            android:hint="Matéria Vinculada"
+            app:entries="@{viewModel.listaMaterias}"
+            app:selectedItem="@={viewModel.materiaSelecionada}" />
+
+        <Button
+            android:id="@+id/buttonCadastrarAluno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar Aluno"
+            android:onClick="@{() -> viewModel.cadastrarAluno()}" />
+
+        <!-- RecyclerView para exibir os cadastros de alunos -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewAlunos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:items="@{viewModel.listaAlunos}"
+            app:itemClick="@{viewModel::onItemClick}" />
+
+    </LinearLayout>
+</layout>
